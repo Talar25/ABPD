@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApplication2.Migrations
 {
     /// <inheritdoc />
-    public partial class Createtables : Migration
+    public partial class UpdateModelChanges : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -137,28 +137,23 @@ namespace WebApplication2.Migrations
                 columns: new[] { "IdPatient", "DateOfBirth", "FirstName", "LastName" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 5, 28, 23, 48, 49, 623, DateTimeKind.Local).AddTicks(6634), "Tony", "Stark" },
-                    { 2, new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3260), "Frank", "Sinatra" },
-                    { 3, new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3277), "Joe", "Cocker" },
-                    { 4, new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3280), "Rodion", "Raskolnikov" },
-                    { 5, new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3282), "Jozef", "Pilsudski" }
+                    { 1, new DateTime(1990, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified), "Tony", "Stark" },
+                    { 2, new DateTime(1980, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Frank", "Sinatra" },
+                    { 3, new DateTime(1975, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), "Joe", "Cocker" },
+                    { 4, new DateTime(1985, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Rodion", "Raskolnikov" },
+                    { 5, new DateTime(1880, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jozef", "Pilsudski" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Prescription_Medicament",
-                columns: new[] { "IdMedicament", "IdPrescription", "Details", "Dose" },
-                values: new object[] { 1, 3, "1x dziennie", 100 });
 
             migrationBuilder.InsertData(
                 table: "Prescriptions",
                 columns: new[] { "IdPrescription", "Date", "DueDate", "IdDoctor", "IdPatient" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(8632), new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(8796), 1, 1 },
-                    { 2, new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9052), new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9054), 2, 2 },
-                    { 4, new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9056), new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9057), 1, 4 },
-                    { 5, new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9059), new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9060), 2, 5 },
-                    { 6, new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9062), new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9063), 4, 5 }
+                    { 1, new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 1 },
+                    { 2, new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 2 },
+                    { 4, new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 4 },
+                    { 5, new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 5 },
+                    { 6, new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified), 4, 5 }
                 });
 
             migrationBuilder.InsertData(
@@ -167,7 +162,8 @@ namespace WebApplication2.Migrations
                 values: new object[,]
                 {
                     { 1, 1, "1x dziennie", 10 },
-                    { 1, 2, "2x dziennie", null }
+                    { 1, 2, "2x dziennie", null },
+                    { 1, 4, "1x dziennie", 100 }
                 });
 
             migrationBuilder.CreateIndex(

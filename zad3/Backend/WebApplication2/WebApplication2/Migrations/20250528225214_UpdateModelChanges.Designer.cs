@@ -12,8 +12,8 @@ using WebApplication2.Data;
 namespace WebApplication2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250528214850_Create tables")]
-    partial class Createtables
+    [Migration("20250528225214_UpdateModelChanges")]
+    partial class UpdateModelChanges
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -185,35 +185,35 @@ namespace WebApplication2.Migrations
                         new
                         {
                             IdPatient = 1,
-                            DateOfBirth = new DateTime(2025, 5, 28, 23, 48, 49, 623, DateTimeKind.Local).AddTicks(6634),
+                            DateOfBirth = new DateTime(1990, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Tony",
                             LastName = "Stark"
                         },
                         new
                         {
                             IdPatient = 2,
-                            DateOfBirth = new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3260),
+                            DateOfBirth = new DateTime(1980, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Frank",
                             LastName = "Sinatra"
                         },
                         new
                         {
                             IdPatient = 3,
-                            DateOfBirth = new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3277),
+                            DateOfBirth = new DateTime(1975, 7, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Joe",
                             LastName = "Cocker"
                         },
                         new
                         {
                             IdPatient = 4,
-                            DateOfBirth = new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3280),
+                            DateOfBirth = new DateTime(1985, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Rodion",
                             LastName = "Raskolnikov"
                         },
                         new
                         {
                             IdPatient = 5,
-                            DateOfBirth = new DateTime(2025, 5, 28, 23, 48, 49, 625, DateTimeKind.Local).AddTicks(3282),
+                            DateOfBirth = new DateTime(1880, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Jozef",
                             LastName = "Pilsudski"
                         });
@@ -251,40 +251,40 @@ namespace WebApplication2.Migrations
                         new
                         {
                             IdPrescription = 1,
-                            Date = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(8632),
-                            DueDate = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(8796),
+                            Date = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IdDoctor = 1,
                             IdPatient = 1
                         },
                         new
                         {
                             IdPrescription = 2,
-                            Date = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9052),
-                            DueDate = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9054),
+                            Date = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IdDoctor = 2,
                             IdPatient = 2
                         },
                         new
                         {
                             IdPrescription = 4,
-                            Date = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9056),
-                            DueDate = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9057),
+                            Date = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IdDoctor = 1,
                             IdPatient = 4
                         },
                         new
                         {
                             IdPrescription = 5,
-                            Date = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9059),
-                            DueDate = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9060),
+                            Date = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IdDoctor = 2,
                             IdPatient = 5
                         },
                         new
                         {
                             IdPrescription = 6,
-                            Date = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9062),
-                            DueDate = new DateTime(2025, 5, 28, 23, 48, 49, 628, DateTimeKind.Local).AddTicks(9063),
+                            Date = new DateTime(2025, 5, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 6, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IdDoctor = 4,
                             IdPatient = 5
                         });
@@ -329,7 +329,7 @@ namespace WebApplication2.Migrations
                         new
                         {
                             IdMedicament = 1,
-                            IdPrescription = 3,
+                            IdPrescription = 4,
                             Details = "1x dziennie",
                             Dose = 100
                         });

@@ -25,43 +25,19 @@ public class AppDbContext : DbContext
             e.Property(n => n.FirstName).HasMaxLength(100).IsRequired();
             e.Property(n => n.LastName).HasMaxLength(100).IsRequired();
 
-
             e.HasData(new List<Doctor>
             {
+                new Doctor { IdDoctor = 1, FirstName = "James", LastName = "Bond", Email = "bondjames@gmail.com" },
                 new Doctor
                 {
-                    IdDoctor = 1,
-                    FirstName = "James",
-                    LastName = "Bond",
-                    Email = "bondjames@gmail.com",
+                    IdDoctor = 2, FirstName = "Vladimir", LastName = "Nabukov", Email = "dostoywskiisbad@gmail.com"
                 },
+                new Doctor { IdDoctor = 3, FirstName = "Humbert", LastName = "Humbert", Email = "lolitaluv@gmail.com" },
+                new Doctor { IdDoctor = 4, FirstName = "Dr", LastName = "Evil", Email = "biliongazilion@gmail.com" },
                 new Doctor
                 {
-                    IdDoctor = 2,
-                    FirstName = "Vladimir",
-                    LastName = "Nabukov",
-                    Email = "dostoywskiisbad@gmail.com",
-                },
-                new Doctor
-                {
-                    IdDoctor = 3,
-                    FirstName = "Humbert",
-                    LastName = "Humbert",
-                    Email = "lolitaluv@gmail.com",
-                },
-                new Doctor
-                {
-                    IdDoctor = 4,
-                    FirstName = "Dr",
-                    LastName = "Evil",
-                    Email = "biliongazilion@gmail.com",
-                },
-                new Doctor
-                {
-                    IdDoctor = 5,
-                    FirstName = "Donald",
-                    LastName = "Trump",
-                    Email = "thebiggestthebestcriminal@gmail.com",
+                    IdDoctor = 5, FirstName = "Donald", LastName = "Trump",
+                    Email = "thebiggestthebestcriminal@gmail.com"
                 }
             });
         });
@@ -75,40 +51,30 @@ public class AppDbContext : DbContext
 
             n.HasData(new List<Patient>
             {
-                new Patient()
+                new Patient
                 {
-                    IdPatient = 1,
-                    FirstName = "Tony",
-                    LastName = "Stark",
-                    DateOfBirth = DateTime.Now,
+                    IdPatient = 1, FirstName = "Tony", LastName = "Stark",
+                    DateOfBirth = new DateTime(1990, 1, 1, 8, 0, 0),
                 },
-                new Patient()
+                new Patient
                 {
-                    IdPatient = 2,
-                    FirstName = "Frank",
-                    LastName = "Sinatra",
-                    DateOfBirth = DateTime.Now,
+                    IdPatient = 2, FirstName = "Frank", LastName = "Sinatra",
+                    DateOfBirth = new DateTime(1980, 5, 15, 0, 0, 0),
                 },
-                new Patient()
+                new Patient
                 {
-                    IdPatient = 3,
-                    FirstName = "Joe",
-                    LastName = "Cocker",
-                    DateOfBirth = DateTime.Now,
+                    IdPatient = 3, FirstName = "Joe", LastName = "Cocker",
+                    DateOfBirth = new DateTime(1975, 7, 20, 0, 0, 0),
                 },
-                new Patient()
+                new Patient
                 {
-                    IdPatient = 4,
-                    FirstName = "Rodion",
-                    LastName = "Raskolnikov",
-                    DateOfBirth = DateTime.Now,
+                    IdPatient = 4, FirstName = "Rodion", LastName = "Raskolnikov",
+                    DateOfBirth = new DateTime(1985, 3, 10, 0, 0, 0),
                 },
-                new Patient()
+                new Patient
                 {
-                    IdPatient = 5,
-                    FirstName = "Jozef",
-                    LastName = "Pilsudski",
-                    DateOfBirth = DateTime.Now,
+                    IdPatient = 5, FirstName = "Jozef", LastName = "Pilsudski",
+                    DateOfBirth = new DateTime(1880, 12, 5, 0, 0, 0),
                 }
             });
         });
@@ -181,40 +147,40 @@ public class AppDbContext : DbContext
                 new Prescription
                 {
                     IdPrescription = 1,
-                    Date = DateTime.Now,
-                    DueDate = DateTime.Now,
+                    Date = new DateTime(2025, 5, 28), // Use a static date
+                    DueDate = new DateTime(2025, 6, 28), // Use a static date
                     IdDoctor = 1,
                     IdPatient = 1
                 },
                 new Prescription
                 {
                     IdPrescription = 2,
-                    Date = DateTime.Now,
-                    DueDate = DateTime.Now,
+                    Date = new DateTime(2025, 5, 28),
+                    DueDate = new DateTime(2025, 6, 28),
                     IdDoctor = 2,
                     IdPatient = 2
                 },
                 new Prescription
                 {
                     IdPrescription = 4,
-                    Date = DateTime.Now,
-                    DueDate = DateTime.Now,
+                    Date = new DateTime(2025, 5, 28),
+                    DueDate = new DateTime(2025, 6, 28),
                     IdDoctor = 1,
                     IdPatient = 4
                 },
                 new Prescription
                 {
                     IdPrescription = 5,
-                    Date = DateTime.Now,
-                    DueDate = DateTime.Now,
+                    Date = new DateTime(2025, 5, 28),
+                    DueDate = new DateTime(2025, 6, 28),
                     IdDoctor = 2,
                     IdPatient = 5
                 },
                 new Prescription
                 {
                     IdPrescription = 6,
-                    Date = DateTime.Now,
-                    DueDate = DateTime.Now,
+                    Date = new DateTime(2025, 5, 28),
+                    DueDate = new DateTime(2025, 6, 28),
                     IdDoctor = 4,
                     IdPatient = 5
                 }
@@ -241,7 +207,7 @@ public class AppDbContext : DbContext
                 .WithMany(e => e.PrescriptionMedicaments)
                 .HasForeignKey(e => e.IdPrescription)
                 .OnDelete(DeleteBehavior.ClientCascade);
-            
+
             n.HasData(new List<Prescription_Medicament>
             {
                 new Prescription_Medicament
@@ -260,7 +226,7 @@ public class AppDbContext : DbContext
                 new Prescription_Medicament
                 {
                     IdMedicament = 1,
-                    IdPrescription = 3,
+                    IdPrescription = 4,
                     Dose = 100,
                     Details = "1x dziennie"
                 }
